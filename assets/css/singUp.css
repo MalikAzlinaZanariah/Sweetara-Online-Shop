@@ -136,6 +136,12 @@ a:hover {
   margin-left: 30%;
 }
 
+.icon {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #d46f6d;
+}
+
 @media screen and (max-width: 992px) {
   .card1 {
     display: none;
