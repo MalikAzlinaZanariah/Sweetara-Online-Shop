@@ -1,0 +1,26 @@
+<div class="bag-table">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                     <thead>
+                        <tr>
+                          <th>action</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Subtotal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td colspan="6">Your Cart  is Empty</td>
+                          
+                         
+                        </tr>
+                        <tr>
+                          <td class="totalp" colspan="7"> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                    </div>

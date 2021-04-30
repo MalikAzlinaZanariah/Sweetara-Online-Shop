@@ -13,27 +13,43 @@ body {
     text-align:center;
     height: 100%;
     padding:40px;
-    background:url(../../assets/bannersweetara.png) no-repeat;
+   background-color: #ffdfd3;
     background-size:cover;
     margin-top:65px;
+
   }
+  .company-name{
+    padding-top: 1rem;
+    text-align: center;
+  }
+  
   
   @media (max-width:991px) {
     #promo {
       padding:20px;
     }
   }
-  
+  .navbar{
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+
+  }
+
+  .nav a i{
+    color:#592728;
+  }
   #promo .jumbotron {
     
     max-width:800px;
     
   }
+  .rowcart{
+    height: 100%;
+    padding-top: 10rem;
 
+  }
   .cart-section{
     height: 100%;
-    padding-top:10rem ;
-   
+    padding-top: 10rem;
   }
   .labelitem{
       text-align: left;
@@ -43,8 +59,8 @@ body {
       color:#592728;
   }
  .addcartbtn input{
-    background-color: #ffdfd3;
-    padding: 1rem;
+    background-color: #592728;
+    color:#fff;
     border: none;
     outline: none;
     border-radius: 5%;
@@ -57,17 +73,6 @@ body {
     #promo .jumbotron {
       padding:20px;
     }
-  }
-
-  footer{
-    
-    background-color: #ffdfd3;
-  }
-  .footer-contacts{
-    padding-top:3rem ;
-  }
-  .footer-about{
-    padding-top: 2rem;
   }
   
   .dark-section {
