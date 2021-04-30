@@ -1,3 +1,37 @@
+<?php
+include("databs.php");
+include("function.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+
+    if(!empty($name)  &&!empty($password) && !is_numeric($name)  && (pwdMatch($password, $cpassword) !== true))
+    {	
+
+      
+        $user_id = random_num(20);
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $query = "insert into users (user_id,name,email,password) values ('$user_id','$name','$email','$hash')";
+        
+        mysqli_query($con,$query);
+
+        
+        header("Location: index.php");
+         die;
+       
+
+    }else 
+    {
+        echo '<p>Please enter some valid information!<p>';
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +41,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/singUp.css">
-    <title>Sign Up | Sweetara</title>
+    <title>Sweetara Sign Up</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

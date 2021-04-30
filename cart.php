@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -23,11 +24,21 @@
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">  
                     <li role="presentation"><a href="index.html">Home </a></li>
                     <li class="active" role="presentation"><a href="cart.html">My Cart </a></li>
-                    <li role="presentation"><a href="#">Login</a></li>
-                    <li role="presentation"><a href="#">Register</a></li>
+                <?php
+                if (isset($_SESSION["user_id"])) {
+                    echo "<li role="presentation"><a href="account.php">Account</a></li>";
+                    echo "<li role="presentation"><a href="logout.php">Logout</a></li>";"
+                }
+                    
+                else {
+                   
+                    echo "<li role="presentation"><a href="signin.php">Sign In</a></li>";
+                    echo "<li role="presentation"><a href="signup.php">Sign Up</a></li>";"
+                 } 
+                 ?>
                 </ul>
             </div>
         </div>
@@ -65,8 +76,8 @@
                 <div class="clearfix visible-sm-block"></div>
                 <div class="col-md-4 footer-about">
                     <h4>About The Shop</h4>
-                    <p>The shop's name is intended as or percieved to mean as "Sweet Tara!!" or "Bili tayo cake tara sa Sweetara" interpreted as a friend inviting other friend to enjoy sweet snack time .
-                    </p>
+                    <p>The shop's name is intended as or percieved to mean as "Sweet Tara!!" or "Bili tayo cake tara sa Sweetara" interpreted as a friend inviting other friend to enjoy sweet snack time .</p>
+                    <p>Baked by Tessa Huff</p>
                     <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                 </div>
             </div>

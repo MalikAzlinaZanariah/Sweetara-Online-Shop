@@ -42,16 +42,24 @@ body {
   .labelitem h3{
       color:#592728;
   }
+  .addcartbtn{
+    padding: 3rem;
+  }
  .addcartbtn input{
     background-color: #ffdfd3;
     padding: 1rem;
     border: none;
     outline: none;
     border-radius: 5%;
+    margin-bottom:20px;
  }
  .addcartbtn input:hover{
      background-color: #d46f6d;
  }
+ .row{
+   display: wrap;
+ }
+
   
   @media (max-width:991px) {
     #promo .jumbotron {
@@ -87,7 +95,6 @@ body {
   
   #welcome p {
     max-width:800px;
-    font-size:20px;
     margin:0 auto;
     color:#666;
   }

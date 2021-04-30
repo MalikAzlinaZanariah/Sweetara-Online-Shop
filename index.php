@@ -23,11 +23,22 @@
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right">
+
+                <ul class="nav navbar-nav navbar-right">  
                     <li class="active" role="presentation"><a href="index.html">Home </a></li>
                     <li role="presentation"><a href="cart.html">My Cart </a></li>
-                    <li role="presentation"><a href="#">Login</a></li>
-                    <li role="presentation"><a href="#">Register</a></li>
+                <?php
+                if (isset($_SESSION["user_id"])) {
+                    echo "<li role="presentation"><a href="signin.php">Account</a></li>";
+                    echo "<li role="presentation"><a href="signUp.php">Logout</a></li>";"
+                }
+                    
+                else {
+                   
+                    echo "<li role="presentation"><a href="signin.php">Sign In</a></li>";
+                    echo "<li role="presentation"><a href="signUp.php">Sign Up</a></li>";"
+                 } 
+                 ?>
                 </ul>
             </div>
         </div>
@@ -44,12 +55,12 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <a href="assets/cake2.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/cake2.jpg"></a>
+                    <a href="assets/MeltedCaramelCake.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/MeltedCaramelCake.jpg"></a>
                 </div>
                 <div class="labelitem">
-                    <h3>Choco Melt Cake</h3>
-                    <p>Price: P550</p>
-                    <p>Chocolately and butterey cake made with 100% pure cocoa </p>
+                    <h3>Caramel Melt Cake</h3>
+                    <p>Price: P500</p>
+                    <p>Chocolate cake with melted salted caramel cake on top </p>
                     
                 </div>
                 <div class="addcartbtn">
@@ -58,12 +69,12 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <a href="assets/cake2.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/cake2.jpg"></a>
+                    <a href="assets/wavescake.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/wavescake.jpg"></a>
                 </div>
                 <div class="labelitem">
-                    <h3>Cake Sample</h3>
-                    <p>Price: P300</p>
-                    <p>Sweet Cake Sample Description brief Sentence </p>
+                    <h3>Wavey Cake</h3>
+                    <p>Price: P800</p>
+                    <p>Nutmeg cake with roested hazelnut, cinnamon and buttercream</p>
                     
                 </div>
                 <div class="addcartbtn">
@@ -73,18 +84,65 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <a href="assets/cake2.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/cake2.jpg"></a>
+                    <a href="assets/cake3.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/cake3.jpg"></a>
                 </div>
                 <div class="labelitem">
-                    <h3>Cake Sample</h3>
-                    <p>Price: P300</p>
-                    <p>Sweet Cake Sample Description brief Sentence </p>
+                    <h3>Choco Melty Cake</h3>
+                    <p>Price: P600</p>
+                    <p>Chocolate cake with melted milky chocolate and top with choco flakes</p>
                     
                 </div>
                 <div class="addcartbtn">
                     <input type="button" name="addcart" value="Add to Cart">
                 </div>
             </div>
+          
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="assets/MimosaCake.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/MimosaCake.jpg"></a>
+                </div>
+                <div class="labelitem">
+                    <h3>Mimosa Cake</h3>
+                    <p>Price: P800</p>
+                    <p>Sponge cake with orange flavor and champagne buttercream</p>
+                    
+                </div>
+                <div class="addcartbtn">
+                    <input type="button" name="addcart" value="Add to Cart">
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="assets/cloudycake.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/cloudycake.jpg"></a>
+                </div>
+                <div class="labelitem">
+                    <h3>Honey Petal Cake</h3>
+                    <p>Price: P750</p>
+                    <p>Chiffon cake with orange flavor and honey buttercream</p>
+                    
+                </div>
+                <div class="addcartbtn">
+                    <input type="button" name="addcart" value="Add to Cart">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="assets/PinkSunsetCake.jpg" target="_blank" data-lightbox="cakes"><img class="img-responsive" src="assets/PinkSunsetCake.jpg"></a>
+                </div>
+                <div class="labelitem">
+                    <h3>Sunset Cake</h3>
+                    <p>Price: P800</p>
+                    <p>Red Velvet Cake with chocolate peppermint buttercream</p>
+                    
+                </div>
+                <div class="addcartbtn">
+                    <input type="button" name="addcart" value="Add to Cart">
+                </div>
+            </div>
+           
+           
+           
         </div>
     </div>
     <footer>
@@ -109,8 +167,8 @@
                 <div class="clearfix visible-sm-block"></div>
                 <div class="col-md-4 footer-about">
                     <h4>About The Shop</h4>
-                    <p>The shop's name is intended as or percieved to mean as "Sweet Tara!!" or "Bili tayo cake tara sa Sweetara" interpreted as a friend inviting other friend to enjoy sweet snack time .
-                    </p>
+                    <p>The shop's name is intended as or percieved to mean as "Sweet Tara!!" or "Bili tayo cake tara sa Sweetara" interpreted as a friend inviting other friend to enjoy sweet snack time.</p>
+                    <p>Baked by Tessa Huff</p>
                     <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                 </div>
             </div>

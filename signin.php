@@ -1,3 +1,41 @@
+<?php
+include("databs.php");
+include("function.php");
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+   
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if(!empty($email) && !empty($password) && !is_numeric($email))
+    {
+        
+        $query = "select * from users where email = '$email' limit 1";
+        $result = mysqli_query($con,$query);
+
+        if($result)
+        {
+            if($result && mysqli_num_rows($result) > 0)
+            {
+                
+                $data = $result->fetch_array();
+		    if (password_verify($password, $data['password']))
+                {
+
+                    $_SESSION['user_id'] = $data['user_id'];
+                    header("Location: index.php");
+                    die;
+                }
+            }
+        }
+        
+        echo '<div class="error"><p>Email or Password is incorrect<p><div>';
+    }else
+    {
+        echo '<div class="error"><p>Please enter some valid information!<p><div>';
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +46,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/login.css">
-    <title>Log In | Sweetara</title>
+    <title>Sweetara Sign In</title>
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
