@@ -1,0 +1,16 @@
+<div id="example wrapper" class="dataTables_wrapper">
+                <div class="dt-buttons">
+                    <button class="dt-button button-alert" tabindex="0" aria-controls="example" type="button">
+                        <span>Add Product</span>
+    
+                    </button>
+                </div>
+            </div>
+            <div id="example_filter" class="dataTables_filter">
+                <label>
+                    Search
+                    <input type="search" class placeholder="" aria-controls="example">
+                </label>
+            </div>
+
+cut table button and search div tag

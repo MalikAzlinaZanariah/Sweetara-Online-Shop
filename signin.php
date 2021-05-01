@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             <div class="card card1">
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
-                        <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo2.png"> </div>
+                        <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo3.png"> </div>
                         <form action="#">
                             <div class="form-group"> <label class="form-control-label text-muted">Email</label> 
                                 <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required> </div>
