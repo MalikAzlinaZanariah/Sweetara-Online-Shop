@@ -1,6 +1,10 @@
-<?php
+<?
 include("databs.php");
 include("function.php");
+
+?>
+
+<?php
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
    
@@ -36,6 +40,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     }
 }
 ?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,13 +56,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
+    <a href="index.php">Home</a>
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo3.png"> </div>
-                        <form action="#">
+                        <form class="form" id="form" action="signin.php" method="post" >
                             <div class="form-group"> <label class="form-control-label text-muted">Email</label> 
                                 <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required> </div>
                             <div class="form-group"> <label class="form-control-label text-muted">Password</label> 
@@ -70,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 </div>
                 
                 <div class="bottom text-center mb-5">
-                    <a href="signUp.html" class="sm-text mx-auto mb-3">Don't have an account?<button class="btn btn-white ml-2">Sign Up</button></a>
+                    <a href="signup.php" class="sm-text mx-auto mb-3">Don't have an account?<button class="btn btn-white ml-2">Sign Up</button></a>
                 </div>
             </div>
             <div class="card card2">

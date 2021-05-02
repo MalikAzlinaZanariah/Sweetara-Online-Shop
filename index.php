@@ -29,14 +29,14 @@
                     <li role="presentation"><a href="cart.html">My Cart </a></li>
                 <?php
                 if (isset($_SESSION["user_id"])) {
-                    echo "<li role="presentation"><a href="signin.php">Account</a></li>";
-                    echo "<li role="presentation"><a href="signUp.php">Logout</a></li>";"
+                    echo "<li role='presentation'><a href='signin.php'>Account</a></li>";
+                    echo "<li role='presentation'><a href='signin.php'>Logout</a></li>";
                 }
                     
                 else {
                    
-                    echo "<li role="presentation"><a href="signin.php">Sign In</a></li>";
-                    echo "<li role="presentation"><a href="signUp.php">Sign Up</a></li>";"
+                    echo "<li role='presentation'><a href='signin.php'>Sign In</a></li>";
+                    echo "<li role='presentation'><a href='signin.php'>Sign Up</a></li>";
                  } 
                  ?>
                 </ul>

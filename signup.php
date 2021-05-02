@@ -1,7 +1,10 @@
-<?php
+<?
 include("databs.php");
 include("function.php");
 
+?>
+
+<?php
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $name = $_POST['name'];
@@ -9,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
 
-    if(!empty($name)  &&!empty($password) && !is_numeric($name)  && (pwdMatch($password, $cpassword) !== true))
+    if(!empty($name)  && !empty($password) && !is_numeric($name)  && (pwdMatch($password, $cpassword) !== true))
     {	
 
       
@@ -39,8 +42,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/singUp.css">
+   
     <title>Sweetara Sign Up</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,6 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
+    <a href="index.php">Home</a>
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
@@ -59,30 +65,33 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
                         <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo3.png"> </div>
-                        <form action="#" class="form" id="form">
+                        <form class="form" id="form" action="signup.php" method="post" >
+                            <div class="form-group"> <label class="form-control-label text-muted">Name</label> 
+                                <input type="text" id="name" name="name" placeholder="Enter your name" class="form-control" required>
+                            </div>
                             <div class="form-group"> <label class="form-control-label text-muted">Email</label> 
                                 <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required> </div>
                             <div class="form-group"> <label class="form-control-label text-muted">Password</label> 
-                                <input type="password" id="pass" name="psw" placeholder="Enter your password" class="form-control" required>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control" required>
                             </div>
                             <div class="form-group"> <label class="form-control-label text-muted">Confirm Password</label> 
-                                <input type="password" id="confirmPass" name="psw" placeholder="Enter your password" class="form-control" required>
+                                <input type="password" id="cpassword" name="cpassword" placeholder="Enter your password" class="form-control" required>
                             </div>
-                            <div class="registrationFormAlert"  id="CheckPasswordMatch">
+                            <!-- <div class="registrationFormAlert"  id="CheckPasswordMatch">
                                 <script>
                                 function checkPasswordMatch() {
-                                    var password = $("#pass").val();
-                                    var confirmPassword = $("#confirmPass").val();
+                                    var password = $("#password").val();
+                                    var confirmPassword = $("#cpassword").val();
                                     if (password != confirmPassword)
                                         $("#CheckPasswordMatch").html("Passwords does not match!").css('color', 'red');
                                     else
                                         $("#CheckPasswordMatch").html("Passwords match.").css('color', 'green');
                                 }
                                 $(document).ready(function () {
-                                   $("#confirmPass").keyup(checkPasswordMatch);
+                                   $("#cspassword").keyup(checkPasswordMatch);
                                 });
                                 </script>
-                            </div>
+                            </div> -->
 
                             <div class="row justify-content-center my-3 px-3"> <button type="submit" class="btn-block btn-color">Sign Up</button> </div>
                            
@@ -92,7 +101,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 </div>
                 
                 <div class="bottom text-center mb-5">
-                    <a href="login.html" class="sm-text mx-auto mb-3">Already have an account?<button class="btn btn-white ml-2">Sign In</button></a>
+                    <a href="signin.php" class="sm-text mx-auto mb-3">Already have an account?<button class="btn btn-white ml-2">Sign In</button></a>
                 </div>
                   
             </div>
