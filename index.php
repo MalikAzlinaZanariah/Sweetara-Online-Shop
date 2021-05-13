@@ -1,3 +1,10 @@
+<?php
+    session_start();
+?>
+<?php 
+include('databs.php'); 
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +15,7 @@
     <!--logo-->
     <link rel="shortcut icon" href="assets/logo.png"/>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -19,24 +27,26 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="#"><img src="assets/sweetara1.png" id="logo"></a>
+                <a class="navbar-brand navbar-link" href="#"><img src="assets/logo3.png" id="logo"></a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
 
                 <ul class="nav navbar-nav navbar-right">  
-                    <li class="active" role="presentation"><a href="index.html">Home </a></li>
-                    <li role="presentation"><a href="cart.html">My Cart </a></li>
+                    <li class="active" role="presentation"><a href="index.php">Home </a></li>
+                    <li role="presentation"><a href="cart.php">My Cart </a></li>
+               
                 <?php
-                if (isset($_SESSION["user_id"])) {
-                    echo "<li role='presentation'><a href='signin.php'>Account</a></li>";
-                    echo "<li role='presentation'><a href='signin.php'>Logout</a></li>";
+                if(isset($_SESSION['username'])){
+                    echo "<li role='presentation'><a href='account.php'>Account</a></li>";
+                   
+                    echo "<li role='presentation'><a href='logout.php'><i class='fas fa-sign-out-alt' ></i></a></li>";
                 }
                     
                 else {
                    
                     echo "<li role='presentation'><a href='signin.php'>Sign In</a></li>";
-                    echo "<li role='presentation'><a href='signin.php'>Sign Up</a></li>";
+                    echo "<li role='presentation'><a href='signup.php'>Sign Up</a></li>";
                  } 
                  ?>
                 </ul>
@@ -150,7 +160,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 footer-navigation">
                     <h3><a href="#">Sweetara</a></h3>
-                    <p class="links"><a href="index.html">Home </a><strong> · </strong><a href="cart.html">My Cart </a><strong> · </strong><a href="#">Login/Register </a><strong> </strong></p>
+                    <p class="links"><a href="index.php">Home </a><strong> · </strong><a href="cart.php">My Cart </a><strong> · <?php if(isset($_SESSION['username'])){ echo '</strong><a href="account.php">Account</a><strong> </strong></p>'; echo '</strong><a href="logout.php"><i class="fas fa-sign-out-alt" ></i></a><strong> </strong></p>';} else { echo '</strong><a href="#">SignIn/SignUp </a><strong> </strong></p>'; } ?>
                     <p class="company-name">Sweetara © 2021 </p>
                 </div>
                 <div class="col-md-4 col-sm-6 footer-contacts">

@@ -1,12 +1,15 @@
 <?php
 
-$dbhost ="localhost";
-$dbuser ="root";
-$dbpass ="";
-$dbname ="sweetara";
 
-if (!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
+$server = "localhost";
+$user = "root";
+$pass = "";
+$database = "sweetara";
 
-    die("Failed to connect: " . mysqli_connect_error());
+$conn = mysqli_connect($server, $user, $pass, $database);
+
+if (!$conn) {
+    die("<script>alert('Connection Failed.')</script>");
 }
+
+?>

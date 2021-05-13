@@ -1,10 +1,20 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['adminname'])) {
+    header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweetara Admin | Order </title>
+    <title>Sweetara Admin Order </title>
     <!--logo-->
     <link rel="shortcut icon" href="assets/logo.png"/>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -26,11 +36,11 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
                     
-                    <li class="active" role="presentation"><a href="index.html">Order Management</a></li>
-                    <li role="presentation"><a href="product.html">Product Management</a></li>
-                    <li role="presentation"><a href="user.html">User Management</a></li>
-                    <li role="presentation"><a href="account.html"><i class="fas fa-user" ></i></a></li>
-                    <li role="presentation"><a href="logout.html"><i class="fas fa-sign-out-alt" ></i></a></li>
+                    <li class="active" role="presentation"><a href="order.php">Order Management</a></li>
+                    <li role="presentation"><a href="product.php">Product Management</a></li>
+                    <li role="presentation"><a href="user.php">User Management</a></li>
+                    <li role="presentation"><a href="account.php"><i class="fas fa-user" ></i></a></li>
+                    <li role="presentation"><a href="signout.php"><i class="fas fa-sign-out-alt" ></i></a></li>
 
                 </ul>
             </div>

@@ -1,32 +1,31 @@
-
 <?php
 session_start(); 
 ?>
 <?php
-  if(isset($_SESSION['username'])){
-    header('location: index.php');
+  if(isset($_SESSION['adminname'])){
+    header('location: order.php');
   }
 ?>
 <?php 
 
-include 'databs.php';
+include '../databs.php';
 
 error_reporting(0);
 
 
 
 if (isset($_POST['submit'])) {
-	$username = $_POST['username'];
+	$username = $_POST['adminname'];
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);
 	$cpassword = md5($_POST['cpassword']);
 
 	if ($password == $cpassword) {
-		$sql = "SELECT * FROM users WHERE email='$email'";
+		$sql = "SELECT * FROM admin WHERE email='$email'";
 		$result = mysqli_query($conn, $sql);
 		if (!$result->num_rows > 0) {
-			$sql = "INSERT INTO users (username, email, password)
-					VALUES ('$username', '$email', '$password')";
+			$sql = "INSERT INTO admin (adminname, email, password)
+					VALUES ('$adminname', '$email', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
 				echo "<script>alert('User Registration Completed.')</script>";
@@ -58,7 +57,7 @@ if (isset($_POST['submit'])) {
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/singUp.css">
-    <link rel="shortcut icon" href="assets/logo.png"/>
+   
     <title>Sweetara Sign Up</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -80,7 +79,7 @@ if (isset($_POST['submit'])) {
                         <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo3.png"> </div>
 
 
-                        <form class="form" id="form" action="signup.php" method="post" >
+                        <form class="form" id="form" action="register.php" method="post" >
                             <div class="form-group"> <label class="form-control-label text-muted">Username</label> 
                                 <input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" required>
                             </div>

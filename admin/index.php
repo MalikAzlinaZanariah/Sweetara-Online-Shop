@@ -1,15 +1,14 @@
-
 <?php
 session_start(); 
 ?>
 <?php
-  if(isset($_SESSION['username'])){
-    header('location: index.php');
+  if(isset($_SESSION['adminname'])){
+    header('location: order.php');
   }
 ?>
 <?php 
 
-include 'databs.php';
+include '../databs.php';
 
 error_reporting(0);
 
@@ -17,12 +16,12 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);
 
-	$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+	$sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
 	$result = mysqli_query($conn, $sql);
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		header("Location: index.php");
+		$_SESSION['adminname'] = $row['adminname'];
+		header("Location: order.php");
 	} else {
 		echo "<script>alert(' Email or Password is Wrong.')</script>";
 	}
@@ -42,40 +41,32 @@ if (isset($_POST['submit'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="shortcut icon" href="assets/logo.png"/>
-    <title>Sweetara Sign In</title>
+    <title>Sweetara Admin</title>
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
-    <a href="index.php">Home</a>
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
                 <div class="row justify-content-center my-auto">
                     <div class="col-md-8 col-10 my-5">
-                        <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="assets/logo3.png"> </div>
+                        <div class="row justify-content-center px-3 mb-3"><img id="logo" src="assets/logo3.png">Admin</div>
                         
-                        <form class="form" id="form" action="signin.php" method="post" >
+                        <form class="form" id="form" action="index.php" method="post" >
                             <div class="form-group"> <label class="form-control-label text-muted">Email</label> 
                                 <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required> </div>
                             <div class="form-group"> <label class="form-control-label text-muted">Password</label> 
                                 <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control" required>
                             </div>
 
-                            <div class="row justify-content-center my-3 px-3"> <button type="submit" name="submit" class="btn-block btn-color">Sign in to Sweetara</button> </div>
+                            <div class="row justify-content-center my-3 px-3"> <button type="submit" name="submit" class="btn-block btn-color">Sign in</button> </div>
                         </form>
                         <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted fpsw">Forgot Password?</small></a> </div>
                     </div>
                 </div>
-                
-                <div class="bottom text-center mb-5">
-                    <a href="signup.php" class="sm-text mx-auto mb-3">Don't have an account?<button class="btn btn-white ml-2">Sign Up</button></a>
-                </div>
+            
             </div>
-            <div class="card card2">
-                <div class="my-auto mx-md-5 px-md-5 right">
-                    <div class="row justify-content-center px-3 mb-3"> <img id="cake" src="assets/undraw_Birthday_cake_2wxy.svg"> </div>
-                </div>
-            </div>
+    
         </div>
     </div>
 </div>
