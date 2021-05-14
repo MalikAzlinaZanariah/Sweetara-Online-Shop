@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
 	} else {
 		echo "<script>alert('Password Not Matched.')</script>";
 	}
+    //MAY BUG
 }
 
 ?>
