@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
 			} else {
-				echo "<script>alert('Something Wrong Went.')</script>";
+				echo "<script>alert('Something Went Wrong.')</script>";
 			}
 		} else {
 			echo "<script>alert(' Email Already Exists.')</script>";
@@ -59,6 +59,7 @@ if (isset($_POST['submit'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/singUp.css">
     <link rel="shortcut icon" href="assets/logo.png"/>
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.3-web/css/all.min.css">
     <title>Sweetara Sign Up</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -66,7 +67,8 @@ if (isset($_POST['submit'])) {
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
-    <a href="index.php">Home</a>
+    <a href="index.php"> <div class="d-flex justify-content-center"><i class="icon fas fa-home" style="font-size:35px;color:#d46f6d;"></i></div></a>
+    <br>
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">

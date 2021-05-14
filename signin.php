@@ -37,16 +37,18 @@ if (isset($_POST['submit'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet"> -->
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="shortcut icon" href="assets/logo.png"/>
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.3-web/css/all.min.css">
     <title>Sweetara Sign In</title>
   </head>
   <body>
     <div class="container px-4 py-5 mx-auto">
-    <a href="index.php">Home</a>
+    <a href="index.php"> <div class="d-flex justify-content-center"><i class="icon fas fa-home" style="font-size:35px;color:#d46f6d;"></i></div></a>
+    <br>
+  
     <div class="card card0">
         <div class="d-flex flex-lg-row flex-column-reverse">
             <div class="card card1">
@@ -63,7 +65,7 @@ if (isset($_POST['submit'])) {
 
                             <div class="row justify-content-center my-3 px-3"> <button type="submit" name="submit" class="btn-block btn-color">Sign in to Sweetara</button> </div>
                         </form>
-                        <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted fpsw">Forgot Password?</small></a> </div>
+                        <div class="row justify-content-center my-2"> <a href="forgotpassword.php"><small class="text-muted fpsw">Forgot Password?</small></a> </div>
                     </div>
                 </div>
                 
