@@ -38,7 +38,7 @@ include('databs.php');
                
                 <?php
                 if(isset($_SESSION['username'])){
-                    echo "<li role='presentation'><a href='account.php'>Account</a></li>";
+                    echo "<li role='presentation'><a href='account.php'><i class='fas fa-user' ></i></a></li>";
                    
                     echo "<li role='presentation'><a href='logout.php'><i class='fas fa-sign-out-alt' ></i></a></li>";
                 }

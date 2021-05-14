@@ -1,19 +1,14 @@
-
-<?php
-session_start(); 
-?>
-<?php
-  if(isset($_SESSION['username'])){
-    header('location: index.php');
-  }
-?>
 <?php 
 
 include 'databs.php';
 
 error_reporting(0);
 
+session_start();
 
+if (isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
 
 if (isset($_POST['submit'])) {
 	$username = $_POST['username'];
@@ -29,16 +24,16 @@ if (isset($_POST['submit'])) {
 					VALUES ('$username', '$email', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
-				echo "<script>alert('User Registration Completed.')</script>";
+				echo "<script>alert(' User Registration Completed.')</script>";
 				$username = "";
 				$email = "";
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
 			} else {
-				echo "<script>alert('Something Went Wrong.')</script>";
+				echo "<script>alert('Something Wrong Went.')</script>";
 			}
 		} else {
-			echo "<script>alert(' Email Already Exists.')</script>";
+			echo "<script>alert('Email Already Exists.')</script>";
 		}
 		
 	} else {
@@ -94,21 +89,7 @@ if (isset($_POST['submit'])) {
                             <div class="form-group"> <label class="form-control-label text-muted">Confirm Password</label> 
                                 <input type="password" id="cpassword" name="cpassword" placeholder="Enter to confirm your password" class="form-control" required>
                             </div>
-                            <!-- <div class="registrationFormAlert"  id="CheckPasswordMatch">
-                                <script>
-                                function checkPasswordMatch() {
-                                    var password = $("#password").val();
-                                    var confirmPassword = $("#cpassword").val();
-                                    if (password != confirmPassword)
-                                        $("#CheckPasswordMatch").html("Passwords does not match!").css('color', 'red');
-                                    else
-                                        $("#CheckPasswordMatch").html("Passwords match.").css('color', 'green');
-                                }
-                                $(document).ready(function () {
-                                   $("#cspassword").keyup(checkPasswordMatch);
-                                });
-                                </script>
-                            </div> -->
+                    
 
                             <div class="row justify-content-center my-3 px-3"> <button type="submit" name="submit" class="btn-block btn-color">Sign Up</button> </div>
                            

@@ -32,11 +32,11 @@ include('databs.php');
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">  
-                    <li role="presentation"><a href="index.html">Home </a></li>
-                    <li class="active" role="presentation"><a href="cart.html">My Cart </a></li>
+                    <li role="presentation"><a href="index.php">Home </a></li>
+                    <li class="active" role="presentation"><a href="cart.php">My Cart </a></li>
                 <?php
                 if (isset($_SESSION["username"])) {
-                    echo "<li role='presentation'><a href='account.php'>Account</a></li>";
+                    echo "<li role='presentation'><a href='account.php'><i class='fas fa-user' ></i></a></li>";
                     echo "<li role='presentation'><a href='logout.php'><i class='fas fa-sign-out-alt'></i></a></li>";
                 }
                     
